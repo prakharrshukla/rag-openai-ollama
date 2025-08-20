@@ -13,8 +13,8 @@ env_path = BASE_DIR / ".env"
 load_dotenv(dotenv_path=env_path)
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-print("🔑 Loaded key:", OPENAI_API_KEY[:8] if OPENAI_API_KEY else None)
-assert OPENAI_API_KEY, "❌ OPENAI_API_KEY not set in .env"
+print(" Loaded key:", OPENAI_API_KEY[:8] if OPENAI_API_KEY else None)
+assert OPENAI_API_KEY, " OPENAI_API_KEY not set in .env"
 
 # ---------- Config ----------
 PDF_PATH = BASE_DIR / "Good-Medical-Practice-2024---English-102607294.pdf"
@@ -29,7 +29,7 @@ def normalize_text(s: str) -> str:
 
 def read_pdf_text(path: Path) -> str:
     if not path.exists():
-        raise FileNotFoundError(f"❌ PDF not found at {path}")
+        raise FileNotFoundError(f" PDF not found at {path}")
     reader = PdfReader(str(path))
     texts = []
     for i, p in enumerate(reader.pages):
@@ -38,7 +38,7 @@ def read_pdf_text(path: Path) -> str:
             if t:
                 texts.append(t)
         except Exception as e:
-            print(f"⚠️ Page {i} failed: {e}")
+            print(f" Page {i} failed: {e}")
     return "\n\n".join(texts)
 
 def chunk_text(text: str, chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP):
@@ -55,8 +55,8 @@ embedder = SentenceTransformer(EMBED_MODEL, device=device)
 
 pdf_text = read_pdf_text(PDF_PATH)
 chunks = chunk_text(pdf_text)
-print(f"✅ Extracted {len(pdf_text)} characters from PDF")
-print(f"✅ Split into {len(chunks)} chunks")
+print(f" Extracted {len(pdf_text)} characters from PDF")
+print(f" Split into {len(chunks)} chunks")
 
 doc_embs = embedder.encode(chunks, convert_to_numpy=True, show_progress_bar=True)
 doc_embs = np.array(doc_embs, dtype="float32")
@@ -66,7 +66,7 @@ faiss.normalize_L2(doc_embs)
 index.add(doc_embs)
 
 metas = [{"path": str(PDF_PATH), "chunk": c} for c in chunks]
-print("✅ FAISS index size:", index.ntotal)
+print("FAISS index size:", index.ntotal)
 
 # ---------- Search + LLM ----------
 def search_top_k(q, k=TOP_K):
@@ -101,3 +101,4 @@ def answer_question(q, top_k=TOP_K):
     prompt = build_prompt(q, hits)
     ans = run_llm(prompt)
     return ans, hits
+
