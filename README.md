@@ -19,3 +19,11 @@ Built with **FastAPI**, it integrates both **OpenAI GPT models** (cloud) and **O
 ---
 
 ## 📂 Project Structure
+rag_project02/
+│── app.py # FastAPI app entrypoint
+│── rag_utils.py # Core RAG pipeline (embeddings, FAISS, LLM calls)
+│── requirements.txt # Python dependencies
+│── .env.example # Example environment variables
+│── data/
+│ └── Good-Medical-Practice-2024.pdf
+│── README.md # Documentation
