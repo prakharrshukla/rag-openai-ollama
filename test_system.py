@@ -70,7 +70,7 @@ def test_ollama():
 
 def main():
     """Run all tests"""
-    print("🔍 Medical RAG Q&A System - Test Script")
+    print("🔍 RAG OpenAI Ollama - Medical Q&A System - Test Script")
     print("=" * 50)
     
     tests_passed = 0

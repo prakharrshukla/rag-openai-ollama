@@ -5,13 +5,13 @@ from rag_utils import answer_question
 
 # Page config
 st.set_page_config(
-    page_title="Medical RAG Q&A System",
+    page_title="RAG OpenAI Ollama - Medical Q&A",
     page_icon="🏥",
     layout="wide"
 )
 
 # Header
-st.title("🏥 Medical RAG Q&A System")
+st.title("🏥 RAG OpenAI Ollama - Medical Q&A System")
 st.markdown("Ask questions about the **Good Medical Practice 2024** document")
 
 # Sidebar
@@ -78,7 +78,7 @@ st.markdown("---")
 st.markdown(
     """
     <div style='text-align: center; color: #666;'>
-        <p>Medical RAG Q&A System | Built with Streamlit & LangChain</p>
+        <p>RAG OpenAI Ollama - Medical Q&A System | Built with Streamlit & LangChain</p>
     </div>
     """, 
     unsafe_allow_html=True

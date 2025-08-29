@@ -1,4 +1,4 @@
-# Medical RAG Q&A System
+# RAG OpenAI Ollama - Medical Q&A System
 
 A Retrieval-Augmented Generation (RAG) system for answering questions about medical documents using local LLMs (Ollama) or OpenAI API.
 
@@ -21,8 +21,8 @@ A Retrieval-Augmented Generation (RAG) system for answering questions about medi
 
 1. **Clone and setup**:
 ```bash
-git clone <repository-url>
-cd rag_project02
+git clone https://github.com/prakharrshukla/rag-openai-ollama.git
+cd rag-openai-ollama
 pip install -r requirements.txt
 ```
 
@@ -83,13 +83,15 @@ The system automatically:
 ## File Structure
 
 ```
-rag_project02/
-├── app.py                 # FastAPI backend
-├── streamlit_app.py       # Streamlit web interface
+rag-openai-ollama/
+├── .env.example          # Environment template
+├── .gitignore           # Git ignore rules
+├── README.md            # This file
+├── app.py               # FastAPI backend
+├── streamlit_app.py     # Streamlit web interface
 ├── rag_utils.py          # Core RAG functionality
 ├── requirements.txt       # Python dependencies
-├── .env.example          # Environment template
-├── README.md             # This file
+├── test_system.py       # System test script
 └── Good-Medical-Practice-2024---English-102607294.pdf
 ```
 
