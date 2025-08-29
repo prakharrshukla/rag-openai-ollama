@@ -4,11 +4,11 @@ A Retrieval-Augmented Generation (RAG) system for answering questions about medi
 
 ## Features
 
-- 🏥 **Medical Document Q&A**: Ask questions about "Good Medical Practice 2024" document
-- 🤖 **Dual LLM Support**: Works with both local Ollama models and OpenAI API
-- 🔍 **Semantic Search**: Uses FAISS for efficient document retrieval
-- 🎨 **Multiple Interfaces**: Both Streamlit web app and FastAPI backend
-- ⚡ **GPU Support**: Automatic CUDA detection for faster embeddings
+-  **Medical Document Q&A**: Ask questions about "Good Medical Practice 2024" document
+-  **Dual LLM Support**: Works with both local Ollama models and OpenAI API
+-  **Semantic Search**: Uses FAISS for efficient document retrieval
+-  **Multiple Interfaces**: Both Streamlit web app and FastAPI backend
+-  **GPU Support**: Automatic CUDA detection for faster embeddings
 
 ## Quick Start
 
